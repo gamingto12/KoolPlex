@@ -22,7 +22,7 @@ chat:
   # This does not include color tags such as <red> or <rainbow>
   max-tag-length: 256
   # Color tag for name color
-  name-color: '<white>'
+  name-color: '<red>'
 
 # You can define colors for each group which will appear in the tab list
 colors:
