@@ -2,7 +2,7 @@
 # For documentation, please visit: https://plex.us.org
 
 server:
-  name: "Plexus"
+  name: "KoolFreedom"
   motd: "%servername% - Minecraft %mcversion%"
   colorize_motd: true
   sample:
