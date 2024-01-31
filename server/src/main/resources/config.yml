@@ -1,0 +1,230 @@
+# Plex Configuration File
+# For documentation, please visit: https://plex.us.org
+
+server:
+  name: "Plexus"
+  motd: "%servername% - Minecraft %mcversion%"
+  colorize_motd: true
+  sample:
+    - "&cForums: https://forum.plex.us.org"
+  # What timezone should various messages appear in (e.g. ban message end date)
+  timezone: Etc/UTC
+
+# Ban message is customized in the messages.yml file. The URL to appeal at is below.
+banning:
+  ban_url: "https://forum.plex.us.org"
+
+chat:
+  # Should the server use Plex's chat system? It is recommended to keep this on if you are using ranks.
+  # If you are using permissions, you should turn this off and use Vault to handle prefixes with a different chat plugin
+  enabled: true
+  # The maximum amount of characters a player can have for their tag
+  # This does not include color tags such as <red> or <rainbow>
+  max-tag-length: 256
+  # Color tag for name color
+  name-color: '<white>'
+
+# You can define colors for each group which will appear in the tab list
+colors:
+  admin: '<aqua>'
+  senior: '<gold>'
+  executive: '<red>'
+  co_owner: '<light_purple>'
+  owner: '<dark_red>'
+  developer: '<dark_purple>'
+  masterbuilder: '<dark_aqua>'
+
+# Login Messages
+loginmessages:
+  # Should the player be required to put their name in the login message?
+  name: true
+
+data:
+  central:
+    storage: sqlite # Use mariadb, or sqlite here
+    user: ""
+    password: ""
+    hostname: 127.0.0.1
+    port: 27017
+    db: "plex"
+  side: # This is Redis, leave password blank if auth is false
+    enabled: false
+    auth: true
+    hostname: 127.0.0.1
+    port: 6379
+    password: ""
+
+# Mob limiter / Entity wiping config
+# All entities listed here will NOT be wiped upon wiping entities
+# By default this includes all mobs, as the mobpurge command can be used to purge mobs.
+entitywipe_list:
+  - "ITEM_FRAME"
+  - "AXOLOTL"
+  - "BAT"
+  - "BEE"
+  - "BLAZE"
+  - "CAT"
+  - "CAVE_SPIDER"
+  - "CHICKEN"
+  - "COD"
+  - "COW"
+  - "CREEPER"
+  - "DOLPHIN"
+  - "DONKEY"
+  - "DROWNED"
+  - "ELDER_GUARDIAN"
+  - "ENDER_DRAGON"
+  - "ENDERMAN"
+  - "ENDERMITE"
+  - "EVOKER"
+  - "FOX"
+  - "GHAST"
+  - "GIANT"
+  - "GLOW_SQUID"
+  - "GOAT"
+  - "GUARDIAN"
+  - "HOGLIN"
+  - "HORSE"
+  - "HUSK"
+  - "ILLUSIONER"
+  - "IRON_GOLEM"
+  - "LLAMA"
+  - "MAGMA_CUBE"
+  - "MULE"
+  - "MUSHROOM_COW"
+  - "OCELOT"
+  - "PANDA"
+  - "PARROT"
+  - "PHANTOM"
+  - "PIG"
+  - "PIGLIN"
+  - "PIGLIN_BRUTE"
+  - "PILLAGER"
+  - "POLAR_BEAR"
+  - "RABBIT"
+  - "RAVAGER"
+  - "SALMON"
+  - "SHEEP"
+  - "SHULKER"
+  - "SILVERFISH"
+  - "SKELETON"
+  - "SKELETON_HORSE"
+  - "SLIME"
+  - "SNOWMAN"
+  - "SPIDER"
+  - "SQUID"
+  - "STRAY"
+  - "STRIDER"
+  - "TRADER_LLAMA"
+  - "TROPICAL_FISH"
+  - "TURTLE"
+  - "VEX"
+  - "VILLAGER"
+  - "VINDICATOR"
+  - "WANDERING_TRADER"
+  - "WITCH"
+  - "WITHER"
+  - "WITHER_SKELETON"
+  - "WOLF"
+  - "ZOGLIN"
+  - "ZOMBIE"
+  - "ZOMBIE_HORSE"
+  - "ZOMBIE_VILLAGER"
+  - "ZOMBIFIED_PIGLIN"
+  - "PUFFERFISH"
+
+# Automatically wipe the specified entities
+autowipe:
+  # Should we automatically wipe entities?
+  enabled: true
+  # How often, in seconds, to automatically wipe entities. Default is 5 minutes.
+  interval: 300
+  # Entities to automatically wipe
+  entities:
+    - "DROPPED_ITEM"
+
+# What blocks should be blocked?
+blocked_blocks:
+  - "SPAWNER"
+  - "STRUCTURE_BLOCK"
+  - "JIGSAW"
+
+# What entities should be blocked?
+blocked_entities:
+  - "WITHER"
+  - "ENDER_DRAGON"
+  - "MINECART_TNT"
+
+# See https://docs.plex.us.org/docs/customization/config#worlds for documentation
+# These gamerules apply to all worlds on the server
+global_gamerules:
+  - "doWeatherCycle;true"
+  - "doDaylightCycle;true"
+  - "doMobSpawning;false"
+  - "keepInventory;true"
+  - "doFireTick;false"
+  - "doMobLoot;false"
+  - "mobGriefing;false"
+  - "doTileDrops;false"
+  - "commandBlockOutput;false"
+  - "naturalRegeneration;true"
+  - "announceAdvancements;false"
+  - "showDeathMessages;false"
+  - "sendCommandFeedback;false"
+
+worlds:
+  flatlands:
+    name: "Flatlands"
+    modification:
+      permission: "plex.world.flatlands.modify"
+      message: "<red>You do not have permission to modify this world."
+    gameRules:
+      # The gamerules here override the global gamerules
+      - "doWeatherCycle;false"
+      - "doDaylightCycle;false"
+    parameters:
+      grass_block: 1
+      dirt: 32
+      stone: 16
+      bedrock: 1
+  adminworld:
+    name: "Admin World"
+    entry:
+      permission: "plex.world.adminworld.enter"
+      message: "<red>You do not have permission to enter this world."
+    modification:
+      permission: "plex.world.adminworld.modify"
+      message: "<red>You do not have permission to modify this world."
+    gameRules:
+      - "doWeatherCycle;false"
+      - "doDaylightCycle;false"
+    parameters:
+      grass_block: 1
+      dirt: 32
+      stone: 16
+      bedrock: 1
+  masterbuilderworld:
+    name: "MasterBuilder World"
+    entry:
+      permission: "plex.world.masterbuilderworld.enter"
+      message: "<red>You do not have permission to enter this world."
+    modification:
+      permission: "plex.world.masterbuilderworld.modify"
+      message: "<red>You do not have permission to modify this world."
+    gameRules:
+      - "doWeatherCycle;false"
+      - "doDaylightCycle;false"
+    parameters:
+      grass_block: 1
+      dirt: 32
+      stone: 16
+      bedrock: 1
+
+# If you are running a custom fork of Plex, you may wish to check for updates from a different repository.
+update_repo: "plexusorg/Plex"
+
+# What branch should Plex fetch updates from?
+update_branch: "master"
+
+# Additional logging for debugging
+debug: false
