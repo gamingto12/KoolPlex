@@ -1,3 +1,10 @@
+# KoolPlex
+
+This is literally just Plex, but I'm making it....kooler lmfao (kill me).
+ALL CREDIT GOES TO ANY AN ALL DEVELOPERS OF [PLEX](https://github.com/plexusorg/Plex). NONE OF THIS CODE IS MINE (unless i make the stuff...then that part's mine).
+
+
+
 # Plex [![Build Status](https://ci.plex.us.org/job/Plex/job/master/badge/icon)](https://ci.plex.us.org/job/Plex/job/master/) [![License](https://img.shields.io/github/license/plexusorg/Plex)](https://github.com/plexusorg/Plex/blob/master/LICENSE.md) [![Discord](https://img.shields.io/discord/927737516864446495)](https://discord.plex.us.org)
 
 Plex is a new freedom plugin. It is an alternative to TotalFreedomMod. It has many of the features that make a freedom
