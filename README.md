@@ -1,6 +1,7 @@
 # KoolPlex
 
 This is literally just Plex, but I'm making it....kooler lmfao (kill me).
+
 ALL CREDIT GOES TO ANY AN ALL DEVELOPERS OF [PLEX](https://github.com/plexusorg/Plex). NONE OF THIS CODE IS MINE (unless i make the stuff...then that part's mine).
 
 
