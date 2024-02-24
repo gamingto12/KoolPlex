@@ -6,7 +6,7 @@ server:
   motd: "%servername% - Minecraft %mcversion%"
   colorize_motd: true
   sample:
-    - "&cForums: https://forum.plex.us.org"
+    - "&cForums: No forums"
   # What timezone should various messages appear in (e.g. ban message end date)
   timezone: Etc/UTC
 
@@ -28,9 +28,9 @@ chat:
 colors:
   admin: '<aqua>'
   senior: '<gold>'
-  executive: '<red>'
+  executive: '<dark_red>'
   co_owner: '<light_purple>'
-  owner: '<dark_red>'
+  owner: '<red>'
   developer: '<dark_purple>'
   masterbuilder: '<dark_aqua>'
 
